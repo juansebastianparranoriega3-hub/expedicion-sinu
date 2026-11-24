@@ -202,7 +202,7 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:10px 16px 40p
 
 <section class="hero">
   <h1>Expedición Sinú: guardianes del agua</h1>
-  <p class="lead">Ambiente digital integrado de aprendizaje para grado 7.º. Sigue el río desde su nacimiento, supera tres misiones y ayuda a los pescadores de la ciénaga a descubrir qué le pasa al agua.</p>
+  <p class="lead">Ambiente digital integrado de aprendizaje para grado 7.º. Sigue el río desde donde nace y, en tres misiones, ayuda a los pescadores de la ciénaga a descubrir qué le pasa al agua.</p>
   <div class="tags"><span class="tag">Ciencias Naturales</span><span class="tag">Ciencias Sociales</span><span class="tag">Lengua Castellana</span><span class="tag">Representación · Recuperación · Comparación</span></div>
   <div class="scene" aria-hidden="true">
     <svg viewBox="0 0 1100 290" preserveAspectRatio="xMidYMax slice">
@@ -348,7 +348,7 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:10px 16px 40p
       <h2>Los peces de la ciénaga están muriendo</h2>
       <p>Los pescadores de una ciénaga conectada al río Sinú encontraron peces muertos flotando y el agua cambió de color. De la pesca viven muchas familias.</p>
       <p><strong>Pregunta del proyecto:</strong> ¿qué está afectando el agua y qué podemos hacer, como comunidad, para cuidarla?</p>
-      <p>Baja por el río. En cada parada te espera una misión: primero <strong>representarás el problema</strong>, luego <strong>recuperarás lo que ya sabes</strong> y al final <strong>compararás</strong> datos para descubrir la causa. El río se llena de agua a medida que avanzas.</p>
+      <p>Baja por el río. En la primera parada vas a <strong>representar el problema</strong>, en la segunda vas a <strong>recordar lo que ya sabes</strong> y en la tercera vas a <strong>comparar</strong> datos hasta encontrar la causa. A medida que avanzas, el río se llena de agua.</p>
     </div>
   </div>
 
@@ -356,7 +356,7 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:10px 16px 40p
     <div class="card clay intro reveal">
       <span class="kicker">Antes de partir</span>
   <h2>Mapa de recursos</h2>
-  <p>Para explorar antes o durante las misiones, organizados alrededor del tema central: el agua de nuestra ciénaga.</p>
+  <p>Lecturas, videos y un simulador para consultar antes de empezar o mientras juegas.</p>
   <div class="res">
     <div class="resbox"><h3>El río y su gente</h3><ul>
       <li><a href="https://es.wikipedia.org/wiki/R%C3%ADo_Sin%C3%BA">Lectura: el río Sinú</a></li>
@@ -544,7 +544,7 @@ const S1=sorter($('#s1'),P1,C1);
 $('#c1').onclick=()=>{const r=S1.check();
   if(r.left){sheet('#f1',false,`Te faltan ${r.left} notas`,'<p>Ubica todas las notas antes de comprobar.</p>');return}
   award('m1',r.ok/r.total*20);
-  if(r.ok==r.total){finish(1);sheet('#f1',true,'¡Problema bien representado! +20 XP','<p>Ya tienes el mapa del problema: sabes de dónde partes, a dónde quieres llegar, qué debes averiguar y qué condiciones respetar.</p>',['Seguir el río',()=>location.hash='m2'])}
+  if(r.ok==r.total){finish(1);sheet('#f1',true,'¡Problema bien representado! +20 XP','<p>Ahora sabes de dónde partes, a dónde quieres llegar, qué te falta averiguar y qué condiciones debe cumplir la solución.</p>',['Seguir el río',()=>location.hash='m2'])}
   else sheet('#f1',false,`${r.ok} de 8 bien ubicadas`,'<p>Pista: ¿la nota cuenta algo que ya ocurrió, algo que deseamos, una pregunta o una condición? Las preguntas siempre son incógnitas.</p><p>Mueve las marcadas con ✗ y vuelve a comprobar.</p>')};
 $('#r1').onclick=()=>{S1.reset();$('#f1').innerHTML=''};
 
@@ -556,7 +556,7 @@ $('#k2').onclick=()=>{if(words($('#t2k').value)<5){sheet('#f2',false,'Escribe un
 $('#c2').onclick=()=>{const r=S2.check();
   if(r.left){sheet('#f2',false,`Te faltan ${r.left} habitantes`,'<p>Ubica a todos antes de comprobar.</p>');return}
   award('m2',r.ok/r.total*20);
-  if(r.ok==8){finish(2);sheet('#f2',true,'¡Censo perfecto! +20 XP',`<p>Este conocimiento es la clave del problema: las algas son productoras, y cuando mueren, los descomponedores (bacterias) gastan el oxígeno del agua.</p><p>Compara con lo que escribiste al inicio: “${esc($('#t2k').value.trim().slice(0,140))}”. ¿Lo recordabas así?</p>`,['Seguir el río',()=>location.hash='m3'])}
+  if(r.ok==8){finish(2);sheet('#f2',true,'¡Censo perfecto! +20 XP',`<p>Esto te va a servir en la próxima misión: las algas son productoras y, cuando mueren, las bacterias que las descomponen gastan el oxígeno del agua.</p><p>Al inicio escribiste: “${esc($('#t2k').value.trim().slice(0,140))}”. ¿Se parece a lo que acabas de hacer?</p>`,['Seguir el río',()=>location.hash='m3'])}
   else sheet('#f2',false,`${r.ok} de 8 bien ubicados`,'<p>Revisa los marcados con ✗: pregúntate “¿fabrica su alimento, se come a otros o descompone restos?”.</p>')};
 $('#r2').onclick=()=>{S2.reset();$('#f2').innerHTML=''};
 
